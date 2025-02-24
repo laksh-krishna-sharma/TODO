@@ -1,0 +1,13 @@
+services:
+  api:
+    image: dpills/fastapi-todos:1.0.0
+    container_name: fastapi-todos
+    restart: always
+    ports:
+      - 8000:8000
+    env_file:
+      - .env
+    volumes:
+      - ./todo.db:/app/todo.db  # Persist SQLite database
+
+volumes: {}
